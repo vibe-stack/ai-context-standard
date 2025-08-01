@@ -36,7 +36,6 @@ AI Context files use Markdown format with optional YAML frontmatter:
 ---
 version: "1.0"
 extends: ["../shared.aicontext", "./docs/api.aicontext"]
-priority: 100
 applies_to: ["*.ts", "*.tsx"]
 ---
 
@@ -59,7 +58,6 @@ The YAML frontmatter is optional but provides metadata for processing:
 ```yaml
 version: string          # Required: Spec version (e.g., "1.0")
 extends: string[]        # Optional: Paths to parent contexts
-priority: number         # Optional: Merge priority (default: 0)
 applies_to: string[]     # Optional: File patterns this context applies to
 ignore: string[]         # Optional: File patterns to exclude
 metadata:               # Optional: Tool-specific metadata
@@ -71,7 +69,7 @@ metadata:               # Optional: Tool-specific metadata
 
 ### 3.1 Resolution Order
 
-AI tools MUST resolve context in the following order (highest to lowest priority):
+AI tools MUST resolve context in the following order:
 
 1. File-specific contexts (same directory as target file)
 2. Directory contexts (walking up the directory tree)
@@ -82,7 +80,6 @@ AI tools MUST resolve context in the following order (highest to lowest priority
 
 - Child contexts override parent contexts
 - `extends` contexts are merged before local content
-- Higher `priority` values take precedence during conflicts
 - Content is merged additively unless explicitly overridden
 
 ### 3.3 File Pattern Matching
@@ -148,7 +145,6 @@ When merging multiple contexts:
 2. Apply extended contexts in order
 3. Apply directory-specific contexts walking down the path
 4. Apply file-specific contexts last
-5. Respect priority values for conflict resolution
 
 ### 5.3 Error Handling
 
@@ -191,7 +187,6 @@ A modern React application built with TypeScript, Next.js 14, and Tailwind CSS.
 version: "1.0"
 extends: ["../../.aicontext"]
 applies_to: ["*.tsx"]
-priority: 10
 ---
 
 # UI Components
