@@ -231,17 +231,7 @@ applies_to: ["*.api.ts", "route.ts"]
 
 ## 7. Migration Guide
 
-### 7.1 From Cursor Rules
-
-Convert `.cursorrules` files to `.aicontext`:
-
-```bash
-# .cursorrules content becomes the main content
-# Add frontmatter with version
-# Organize into standard sections
-```
-
-### 7.2 From README-based Context
+### 7.1 From README-based Context
 
 Extract AI-relevant sections from README files into dedicated `.aicontext` files while maintaining the human documentation separately.
 
