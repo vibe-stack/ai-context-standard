@@ -227,7 +227,6 @@ applies_to: ["*.api.ts", "route.ts"]
   "details": {}
 }
 ```
-```
 
 ## 7. Migration Guide
 
