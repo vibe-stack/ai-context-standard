@@ -133,9 +133,8 @@ The specification covers:
 ## Tool Support
 
 ### Current Support
-- 🏗️ **Reference Implementation** - Basic parser and validator
-- 🔧 **VS Code Extension** - Syntax highlighting and validation
-
+- None
+- 
 ### Planned Support
 For now, only for vCode-IDE 
 
